@@ -3,6 +3,7 @@
 :root {
 	--accent-color: #6ab7b8;
 	--bg-color: #e7e0d8;
+	--text-color: #005267;
 }
 
 html {
@@ -17,14 +18,9 @@ body {
 	flex-flow: column nowrap;
 }
 
-header,
-footer {
-	background: var(--accent-color);
-	padding: 0 4rem;
-}
-
 header {
 	height: 20rem;
+	padding: 0;
 
 	display: flex;
 	flex-flow: row nowrap;
@@ -32,8 +28,46 @@ header {
 	align-items: center;
 }
 
+footer {
+	color: white;
+	padding: 2rem;
+	margin-top: 4rem;
+}
+
+header,
+footer {
+	background: var(--accent-color);
+	font-size: 2rem;
+}
+
 main {
 	flex: 1;
+}
+
+main * {
+	color: var(--text-color);
+	font-size: 2.4rem;
+}
+
+main > h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 4rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+main > * {
+	margin: 2rem 0;
+}
+
+header,
+footer,
+main {
+	padding-left: 5rem;
+	padding-right: 5rem;
 }
 
 .nav-list {
@@ -57,4 +91,53 @@ main {
 
 .logo {
 	height: 14rem;
+}
+
+.game-list {
+	display: flex;
+	flex-flow: column nowrap;
+
+	gap: 4rem;
+}
+
+.game {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 3rem;
+}
+
+.game-info {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1;
+
+	font-size: 1.9rem;
+}
+
+.game-info > h2 {
+	font-size: 1.5em;
+}
+
+.game-info > p {
+	margin-bottom: 1rem;
+}
+
+.game-links {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 3rem;
+}
+
+.game-links:last-child {
+	margin-top: auto;
+}
+
+.game-links a {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.game-thumbnail {
+	height: 20rem;
+	border-radius: 1rem;
 }
