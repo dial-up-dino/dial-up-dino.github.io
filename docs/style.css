@@ -1,37 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+
+:root {
+	--accent-color: #6ab7b8;
+	--bg-color: #e7e0d8;
+}
+
 html {
 	font-size: 10px;
+	background: var(--bg-color);
 }
 
 body {
-    margin: 0;
-	overflow: hidden;
+	font-family: "Baloo 2", sans;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+header,
+footer {
+	background: var(--accent-color);
+	padding: 0 4rem;
+}
+
+header {
+	height: 20rem;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
 }
 
 main {
-	width: 100vw;
-	height: 100vh;
+	flex: 1;
+}
+
+.nav-list {
+	font-size: 3rem;
+	list-style-type: none;
 
 	display: flex;
-	flex-flow: column nowrap;
-	justify-content: center;
-	align-items: center;
-
-	background: #ffffff;
-	background: radial-gradient(
-		circle,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(214, 214, 214, 1) 100%
-	);
+	flex-flow: row nowrap;
+	gap: 3rem;
 }
 
-h1 {
-	font-size: 10rem;
-	text-shadow: grey 1px 0 10px;
-	margin-bottom: 1rem;
+.nav-list a {
+	color: white;
+	text-decoration: none;
 }
 
-p {
-	font-size: 3.2rem;
-	font-family: sans;
-	text-shadow: grey 1px 0 10px;
+.nav-list a.active {
+	text-decoration: underline white 0.4rem;
+	text-underline-offset: 1.4rem;
+}
+
+.logo {
+	height: 14rem;
 }
