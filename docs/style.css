@@ -19,7 +19,7 @@ body {
 }
 
 header {
-	height: 20rem;
+	/* height: 20rem; */
 	padding: 0;
 
 	display: flex;
@@ -91,6 +91,7 @@ main {
 
 .logo {
 	height: 14rem;
+	padding: 2rem 0;
 }
 
 .game-list {
@@ -138,6 +139,17 @@ main {
 }
 
 .game-thumbnail {
+	width: 20rem;
 	height: 20rem;
 	border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+	header, .nav-list, .game {
+		flex-direction: column;
+	}
+
+	.game-thumbnail {
+		align-self: center;
+	}
 }
