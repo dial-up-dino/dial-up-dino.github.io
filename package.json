@@ -1,0 +1,15 @@
+{
+  "name": "dial-up-dino.github.io",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@thi.ng/hiccup": "^5.3.36"
+  }
+}
