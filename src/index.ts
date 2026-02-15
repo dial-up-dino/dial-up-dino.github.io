@@ -7,3 +7,4 @@ async function writeFile(path: string, page: any) {
 }
 
 await writeFile("./docs/index.html", [indexPage]);
+await writeFile("./docs/about.html", [indexPage]);
