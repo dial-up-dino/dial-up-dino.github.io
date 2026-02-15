@@ -1,4 +1,4 @@
-import { type PartialRecord, page } from "../shared";
+import { type PartialRecord, topLevelPage } from "../shared";
 
 type LinkDest = "poki" | "itch" | "steam";
 
@@ -60,31 +60,12 @@ function game(_ctx: any, gameInfo: GameInfo) {
 
 export function indexPage(_ctx: any) {
 	return [
-		page,
+		topLevelPage,
 		[
-			[
-				"header",
-				["img.logo", { src: "./img/logo.svg", alt: "Logo" }],
-				[
-					"nav",
-					[
-						"ul.nav-list",
-						["li", ["a.active", { href: "#" }, "Games"]],
-						["li", ["a", { href: "#", title: "Under construction." }, "About"]],
-						["li", ["a", { href: "#", title: "Under construction." }, "Press"]],
-					],
-				],
-			],
-			[
-				"main",
-				[
-					"p.text-center",
-					"We make games that look like they could be found on your old cozy computer.",
-				],
-				["h1", "Games"],
-				["div.game-list", featuredGames.map((x) => [game, x])],
-			],
-			["footer", "&copy; 2026 Dial-Up Dino Games"],
+			"p.text-center",
+			"We make games that look like they could be found on your old cozy computer.",
 		],
+		["h1", "Games"],
+		["div.game-list", featuredGames.map((x) => [game, x])],
 	];
 }

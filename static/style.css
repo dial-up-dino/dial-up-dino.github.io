@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+
+:root {
+	--accent-color: #6ab7b8;
+	--bg-color: #e7e0d8;
+	--text-color: #005267;
+}
+
+html {
+	font-size: 10px;
+	background: var(--bg-color);
+}
+
+body {
+	font-family: "Baloo 2", sans;
+	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+header {
+	/* height: 20rem; */
+	padding: 0;
+
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+footer {
+	color: white;
+	padding: 2rem;
+	margin-top: 4rem;
+}
+
+header,
+footer {
+	background: var(--accent-color);
+	font-size: 2rem;
+}
+
+main {
+	flex: 1;
+}
+
+main * {
+	color: var(--text-color);
+	font-size: 2.4rem;
+}
+
+main > h1 {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 4rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+main > * {
+	margin: 2rem 0;
+}
+
+header,
+footer,
+main {
+	padding-left: 5rem;
+	padding-right: 5rem;
+}
+
+.nav-list {
+	font-size: 3rem;
+	list-style-type: none;
+
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 3rem;
+}
+
+.nav-list a {
+	color: white;
+	text-decoration: none;
+}
+
+.nav-list a.active {
+	text-decoration: underline white 0.4rem;
+	text-underline-offset: 1.4rem;
+}
+
+.logo {
+	height: 14rem;
+	padding: 2rem 0;
+}
+
+.game-list {
+	display: flex;
+	flex-flow: column nowrap;
+
+	gap: 4rem;
+}
+
+.game {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 3rem;
+}
+
+.game-info {
+	display: flex;
+	flex-flow: column nowrap;
+	flex: 1;
+
+	font-size: 1.9rem;
+}
+
+.game-info > h2 {
+	font-size: 1.5em;
+}
+
+.game-info > p {
+	margin-bottom: 1rem;
+}
+
+.game-links {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 3rem;
+}
+
+.game-links:last-child {
+	margin-top: auto;
+}
+
+.game-links a {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.game-thumbnail {
+	width: 20rem;
+	height: 20rem;
+	border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+	header, .nav-list, .game {
+		flex-direction: column;
+	}
+
+	.game-thumbnail {
+		align-self: center;
+	}
+}
