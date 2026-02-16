@@ -2,6 +2,7 @@ import { cp, mkdir, readdir, rm } from "node:fs/promises";
 import path from "node:path";
 import { serialize } from "@thi.ng/hiccup";
 import { indexPage } from "./pages";
+import { aboutPage } from "./pages/about";
 
 const STATIC_DIR = "./static";
 const DEST_DIR = "./docs";
@@ -21,7 +22,7 @@ async function main() {
 
 	await writeFile("./docs/index.html", [indexPage]);
 	await mkdir("./docs/about");
-	await writeFile("./docs/about/index.html", [indexPage]);
+	await writeFile("./docs/about/index.html", [aboutPage]);
 }
 
 await main();

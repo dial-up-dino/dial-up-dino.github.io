@@ -61,11 +61,12 @@ function game(_ctx: any, gameInfo: GameInfo) {
 export function indexPage(_ctx: any) {
 	return [
 		topLevelPage,
+		"Games",
 		[
 			"p.text-center",
 			"We make games that look like they could be found on your old cozy computer.",
 		],
-		["h1", "Games"],
+		["h1", "Our games"],
 		["div.game-list", featuredGames.map((x) => [game, x])],
 	];
 }
