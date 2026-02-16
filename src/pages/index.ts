@@ -15,7 +15,7 @@ type GameInfo = {
 const featuredGames: GameInfo[] = [
 	{
 		name: "Tens!",
-		thumbnail: "./img/thumb/tens.svg",
+		thumbnail: "/img/thumb/tens.svg",
 		tags: ["puzzle", "solitare"],
 		description:
 			"Addictive game about addition. Select numbers that add up to ten and try to clear as much space as possible!",
@@ -26,7 +26,7 @@ const featuredGames: GameInfo[] = [
 	},
 	{
 		name: "Pigeons aren't Real?",
-		thumbnail: "./img/thumb/pigeons.png",
+		thumbnail: "/img/thumb/pigeons.png",
 		tags: ["arcade"],
 		description:
 			"Pay attention to the pigeon's behavior to distinguish robots from real birds. Don't spook too many real pigeons.",
