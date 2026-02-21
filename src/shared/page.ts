@@ -31,7 +31,15 @@ export function topLevelPage(_ctx: any, pageName: string, ...content: any[]) {
 	return [
 		page,
 		[
-			["header", ["img.logo", { src: "/img/logo.svg", alt: "Logo" }], [menu, pageName]],
+			[
+				"a",
+				{ href: "/" },
+				[
+					"header",
+					["img.logo", { src: "/img/logo.svg", alt: "Logo" }],
+					[menu, pageName],
+				],
+			],
 			["main", ...content],
 			["footer", "&copy; 2026 Dial-Up Dino Games"],
 		],
