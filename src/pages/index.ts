@@ -1,15 +1,13 @@
-import { type PartialRecord, topLevelPage } from "../shared";
+import { topLevelPage } from "../shared";
 
-type LinkDest = "poki" | "itch" | "steam";
-
-type Links = PartialRecord<LinkDest, string>;
+type Links = Record<string, string>;
 
 type GameInfo = {
 	name: string;
 	thumbnail: string;
 	tags: string[];
 	description: string;
-	links: Links;
+	links: Record<string, string>;
 };
 
 const featuredGames: GameInfo[] = [
@@ -20,8 +18,7 @@ const featuredGames: GameInfo[] = [
 		description:
 			"Addictive game about addition. Select numbers that add up to ten and try to clear as much space as possible!",
 		links: {
-			// poki: "#",
-			itch: "https://yngvarr.itch.io/tens",
+			"Coming soon!": "#"
 		},
 	},
 	{
@@ -31,8 +28,7 @@ const featuredGames: GameInfo[] = [
 		description:
 			"Pay attention to the pigeon's behavior to distinguish robots from real birds. Don't spook too many real pigeons.",
 		links: {
-			// poki: "#",
-			itch: "https://yngvarr.itch.io/pigeons-arent-real",
+			"Play on itch!": "https://yngvarr.itch.io/pigeons-arent-real",
 		},
 	},
 ];
