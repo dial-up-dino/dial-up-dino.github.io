@@ -22,12 +22,12 @@ const members: MemberInfo[] = [
 		portrait: "/img/portraits/nika.png",
 		role: "Artist",
 		description:
-			"Has a gene that lets her compute perspective 500% more effective than average. Has to put effort into making lines wobbly.",
+			"Has a gene that lets her compute perspective 5 times more efficiently than average. Has to put effort into making lines wobbly.",
 		links: { artstation: "https://www.artstation.com/syudzius", linkedin: "https://www.linkedin.com/in/veronika-simagina-698137377/" },
 	},
 	{
 		name: "Prof. Banana (PhD)",
-		portrait: "/img/portraits/banana.webp",
+		portrait: "/img/portraits/banana.png",
 		role: "Mascot",
 		description:
 			"Claims he has a degree despite having no fingers. Knows more swear words than polite ones. Never misses deadlines because he just doesn't set any. Doesn't pay rent.",
