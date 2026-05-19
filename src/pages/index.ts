@@ -18,7 +18,7 @@ const featuredGames: GameInfo[] = [
 		description:
 			"Addictive game about addition. Select numbers that add up to ten and try to clear as much space as possible!",
 		links: {
-			"Coming soon!": "#"
+			"Play on Poki!": "https://poki.com/en/g/tens"
 		},
 	},
 	{
