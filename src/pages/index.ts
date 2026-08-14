@@ -12,13 +12,23 @@ type GameInfo = {
 
 const featuredGames: GameInfo[] = [
 	{
+		name: "Hexxagon",
+		thumbnail: "/img/thumb/hexxagon.png",
+		tags: ["board"],
+		description:
+			"Classic game of hexxagon. Defeat your opponents by taking their tokens, stand your ground and prosper.",
+		links: {
+			"Play on CrazyGames!": "https://www.crazygames.com/game/hexxagon",
+		},
+	},
+	{
 		name: "Tens!",
 		thumbnail: "/img/thumb/tens.svg",
 		tags: ["puzzle", "solitare"],
 		description:
 			"Addictive game about addition. Select numbers that add up to ten and try to clear as much space as possible!",
 		links: {
-			"Play on Poki!": "https://poki.com/en/g/tens"
+			"Play on Poki!": "https://poki.com/en/g/tens",
 		},
 	},
 	{
