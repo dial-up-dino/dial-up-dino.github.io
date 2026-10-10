@@ -1,0 +1,22 @@
+---
+import type { MemberInfo } from "../data/members";
+
+type Props = MemberInfo;
+
+const { name, portrait, role, description, links } = Astro.props;
+---
+
+<div class="flex flex-col flex-nowrap gap-4">
+	<img
+		class="size-[220px] rounded-[10px] max-md:self-center bg-accent"
+		src={portrait}
+		alt={name}
+	/>
+	<div class="flex flex-col flex-nowrap text-center">
+		<b>{name}</b>
+		<p>{role}</p>
+		<div class="flex flex-row flex-nowrap justify-center gap-1">
+			{Object.entries(links).map(([network, url]) => <a href={url}><img class="h-[32px]" src={`/img/socials/${network}.png`} alt={network}></a>)}
+		</div>
+	</div>
+</div>

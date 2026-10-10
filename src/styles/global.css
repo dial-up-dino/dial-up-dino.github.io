@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--color-accent: #3b77bc;
+	--color-bg: #92c5ff;
+	--color-ink: #000d1c;
+	--font-sans: "Baloo 2", sans-serif;
+}
+
+@layer base {
+	html {
+		@apply bg-bg font-sans;
+	}
+
+	body {
+		@apply flex min-h-screen flex-col flex-nowrap;
+	}
+
+	main {
+		@apply text-ink;
+	}
+
+	main > * {
+		@apply my-[20px];
+	}
+}

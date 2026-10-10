@@ -1,6 +1,4 @@
-import { topLevelPage } from "../shared";
-
-type MemberInfo = {
+export type MemberInfo = {
 	name: string;
 	portrait: string;
 	role: string;
@@ -8,7 +6,7 @@ type MemberInfo = {
 	links: Record<string, string>;
 };
 
-const members: MemberInfo[] = [
+export const members: MemberInfo[] = [
 	{
 		name: "Igor",
 		portrait: "/img/portraits/igor.png",
@@ -28,8 +26,7 @@ const members: MemberInfo[] = [
 			"Has a gene that lets her compute perspective 5 times more efficiently than average. Has to put effort into making lines wobbly.",
 		links: {
 			artstation: "https://www.artstation.com/syudzius",
-			linkedin:
-				"https://www.linkedin.com/in/veronika-simagina-698137377/",
+			linkedin: "https://www.linkedin.com/in/veronika-simagina-698137377/",
 		},
 	},
 	{
@@ -41,39 +38,3 @@ const members: MemberInfo[] = [
 		links: {},
 	},
 ];
-
-function member(_ctx: any, memberInfo: MemberInfo) {
-	return [
-		"div.game",
-		["img.game-thumbnail", { src: memberInfo.portrait }],
-		[
-			"div.game-info",
-			["h2", memberInfo.name],
-			["p", memberInfo.role],
-			["p", memberInfo.description],
-			[
-				"div.game-links",
-				Object.entries(memberInfo.links).map(([key, url]) => [
-					"span",
-					["a", { href: url }, key],
-				]),
-			],
-		],
-	];
-}
-
-export function aboutPage(_ctx: any) {
-	return [
-		topLevelPage,
-		"About",
-		[
-			"p.text-center",
-			["b", "Dial-Up Dino Games"],
-			" is a 2 person game studio based in Armenia.",
-			["br"],
-			"We make web games that make your brain move!",
-		],
-		["h1", "Meet the team!"],
-		["div.game-list", members.map((x) => [member, x])],
-	];
-}

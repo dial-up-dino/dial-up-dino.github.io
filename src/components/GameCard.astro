@@ -1,0 +1,43 @@
+---
+import type { GameInfo } from "../data/games";
+
+type Props = GameInfo;
+
+const { name, thumbnail, tags, description, links } = Astro.props;
+---
+
+<div class="flex flex-row flex-nowrap gap-[30px] max-md:flex-col">
+	<img
+		class="size-[220px] rounded-[10px] max-md:self-center"
+		src={thumbnail}
+		alt={name}
+	/>
+	<div class="flex flex-1 flex-col">
+		<h2 class="text-[1.5em] font-bold">{name}</h2>
+		<p class="mb-[10px]">Tags: {tags.join(", ")}</p>
+		<p class="mb-[10px]">{description}</p>
+		<div class="mt-auto flex flex-row flex-nowrap gap-[30px]">
+			{
+				links.map((link) =>
+					link.type === "text" ? (
+						<span>
+							<a class="text-[1.1em] font-bold underline" href={link.url}>
+								{link.text}
+							</a>
+						</span>
+					) : (
+						<span>
+							<a href={link.url}>
+								<img
+									class="h-[50px]"
+									src={`/img/badges/${link.badge}.png`}
+									alt={link.badge}
+								/>
+							</a>
+						</span>
+					),
+				)
+			}
+		</div>
+	</div>
+</div>

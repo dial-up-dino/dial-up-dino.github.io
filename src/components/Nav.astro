@@ -1,0 +1,31 @@
+---
+const TOP_LEVEL_LINKS = [
+	{ name: "Games", path: "/" },
+	{ name: "About", path: "/about/" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+	<ul class="flex list-none flex-row flex-nowrap gap-[30px] text-[30px] max-md:flex-col">
+		{
+			TOP_LEVEL_LINKS.map(({ name, path }) => (
+				<li>
+					<a
+						href={path}
+						class:list={[
+							"text-white no-underline",
+							{
+								"underline decoration-white decoration-4 underline-offset-[14px]":
+									currentPath === path,
+							},
+						]}
+					>
+						{name}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>

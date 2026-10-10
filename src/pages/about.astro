@@ -1,0 +1,33 @@
+---
+import Base from "../layouts/Base.astro";
+import MemberCard from "../components/MemberCard.astro";
+import { members } from "../data/members";
+import { socials } from "../data/socials";
+---
+
+<Base>
+	<p class="text-center">
+		<b>Dial-Up Dino Games</b> is a 2 person game studio based in Armenia.
+		<br />
+		We make web games that make your brain move!
+	</p>
+
+	<h1 class="text-center font-bold">Meet the team!</h1>
+
+	<div class="flex flex-row flex-wrap justify-center gap-10">
+		{members.map((member) => <MemberCard {...member} />)}
+	</div>
+
+	<h1 class="text-center font-bold">Let's keep in touch</h1>
+
+	<div class="flex flex-row flex-wrap justify-center gap-6">
+		{Object.entries(socials).map(([network, url]) => <a href={url}><img class="h-[48px]" src={`/img/socials/${network}.png`} alt={network}></a>)}
+	</div>
+
+	<h1 class="text-center font-bold">Come say hello</h1>
+
+	<div class="flex flex-row flex-nowrap justify-center items-center gap-1">
+		<img class="h-[32px]" src="/img/socials/email.png" alt="email icon">
+		<a href="mailto:hello@dial-up-dino.games">hello@dial-up-dino.games</a>
+	</div>
+</Base>

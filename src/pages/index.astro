@@ -1,0 +1,11 @@
+---
+import Base from "../layouts/Base.astro";
+import GameCard from "../components/GameCard.astro";
+import { featuredGames } from "../data/games";
+---
+
+<Base>
+	<div class="flex flex-col flex-nowrap gap-[40px]">
+		{featuredGames.map((game) => <GameCard {...game} />)}
+	</div>
+</Base>
