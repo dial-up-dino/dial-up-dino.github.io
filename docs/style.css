@@ -41,6 +41,7 @@ footer {
 }
 
 main {
+	margin-top: 2rem;
 	flex: 1;
 }
 
@@ -51,7 +52,7 @@ main * {
 
 main > h1 {
 	text-align: center;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	font-size: 4rem;
 }
 

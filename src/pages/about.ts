@@ -15,7 +15,10 @@ const members: MemberInfo[] = [
 		role: "Programmer",
 		description:
 			"Made his first tabletop game in 2nd grade. In 5th grade bought a book on JavaScript because he wanted to make J2ME games (iykyk).",
-		links: { mastodon: "https://mastodon.gamedev.place/@yngvarr", bluesky: "https://bsky.app/profile/hoodie-cat.dev" },
+		links: {
+			mastodon: "https://mastodon.gamedev.place/@yngvarr",
+			bluesky: "https://bsky.app/profile/hoodie-cat.dev",
+		},
 	},
 	{
 		name: "Veronika",
@@ -23,7 +26,11 @@ const members: MemberInfo[] = [
 		role: "Artist",
 		description:
 			"Has a gene that lets her compute perspective 5 times more efficiently than average. Has to put effort into making lines wobbly.",
-		links: { artstation: "https://www.artstation.com/syudzius", linkedin: "https://www.linkedin.com/in/veronika-simagina-698137377/" },
+		links: {
+			artstation: "https://www.artstation.com/syudzius",
+			linkedin:
+				"https://www.linkedin.com/in/veronika-simagina-698137377/",
+		},
 	},
 	{
 		name: "Prof. Banana (PhD)",
@@ -60,9 +67,11 @@ export function aboutPage(_ctx: any) {
 		topLevelPage,
 		"About",
 		[
-			"p",
+			"p.text-center",
 			["b", "Dial-Up Dino Games"],
-			" is a 2 person game studio. We started participating in game jams in 2019 and still do it twice or trice a year. We also have a couple of small full-fledged games and a dream.",
+			" is a 2 person game studio based in Armenia.",
+			["br"],
+			"We make web games that make your brain move!",
 		],
 		["h1", "Meet the team!"],
 		["div.game-list", members.map((x) => [member, x])],

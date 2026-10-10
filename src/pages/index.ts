@@ -98,7 +98,6 @@ export function indexPage(_ctx: any) {
 	return [
 		topLevelPage,
 		"Games",
-		["h1", "Our games"],
 		["div.game-list", featuredGames.map((x) => [game, x])],
 	];
 }
