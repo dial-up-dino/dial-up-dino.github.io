@@ -1,13 +1,23 @@
 import { topLevelPage } from "../shared";
 
-type Links = Record<string, string>;
+type Link =
+	| {
+			type: "text";
+			text: string;
+			url: string;
+	  }
+	| {
+			type: "badge";
+			badge: string;
+			url: string;
+	  };
 
 type GameInfo = {
 	name: string;
 	thumbnail: string;
 	tags: string[];
 	description: string;
-	links: Record<string, string>;
+	links: Link[];
 };
 
 const featuredGames: GameInfo[] = [
@@ -17,9 +27,13 @@ const featuredGames: GameInfo[] = [
 		tags: ["board"],
 		description:
 			"Classic game of hexxagon. Defeat your opponents by taking their tokens, stand your ground and prosper.",
-		links: {
-			"Play on CrazyGames!": "https://www.crazygames.com/game/hexxagon",
-		},
+		links: [
+			{
+				type: "text",
+				text: "Play on CrazyGames!",
+				url: "https://www.crazygames.com/game/hexxagon",
+			},
+		],
 	},
 	{
 		name: "Tens!",
@@ -27,9 +41,9 @@ const featuredGames: GameInfo[] = [
 		tags: ["puzzle", "solitare"],
 		description:
 			"Addictive game about addition. Select numbers that add up to ten and try to clear as much space as possible!",
-		links: {
-			"Play on Poki!": "https://poki.com/en/g/tens",
-		},
+		links: [
+			{ type: "badge", badge: "poki", url: "https://poki.com/en/g/tens" },
+		],
 	},
 	{
 		name: "Pigeons aren't Real?",
@@ -37,17 +51,33 @@ const featuredGames: GameInfo[] = [
 		tags: ["arcade"],
 		description:
 			"Pay attention to the pigeon's behavior to distinguish robots from real birds. Don't spook too many real pigeons.",
-		links: {
-			"Play on itch!": "https://yngvarr.itch.io/pigeons-arent-real",
-		},
+		links: [
+			{
+				type: "badge",
+				badge: "itch",
+				url: "https://yngvarr.itch.io/pigeons-arent-real",
+			},
+		],
 	},
 ];
 
-function linkList(_ctx: any, links: Links) {
-	return Object.entries(links).map(([key, url]) => [
-		"span",
-		["a", { href: url }, key],
-	]);
+function linkList(_ctx: any, links: Link[]) {
+	return links.map((link) => {
+		if (link.type == "text") {
+			return ["span", ["a", { href: link.url }, link.text]];
+		}
+
+		if (link.type == "badge") {
+			return [
+				"span.badge",
+				[
+					"a",
+					{ href: link.url },
+					["img", { src: `/img/badges/${link.badge}.png` }],
+				],
+			];
+		}
+	});
 }
 
 function game(_ctx: any, gameInfo: GameInfo) {
@@ -68,10 +98,6 @@ export function indexPage(_ctx: any) {
 	return [
 		topLevelPage,
 		"Games",
-		[
-			"p.text-center",
-			"We make games that look like they could be found on your old cozy computer.",
-		],
 		["h1", "Our games"],
 		["div.game-list", featuredGames.map((x) => [game, x])],
 	];

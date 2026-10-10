@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap");
 
 :root {
-	--accent-color: #6ab7b8;
-	--bg-color: #e7e0d8;
-	--text-color: #005267;
+	--accent-color: #3B77BC;
+	--bg-color: #92C5FF;
+	--text-color: #000D1C;
 }
 
 html {
@@ -139,9 +139,13 @@ main {
 }
 
 .game-thumbnail {
-	width: 20rem;
-	height: 20rem;
+	width: 22rem;
+	height: 22rem;
 	border-radius: 1rem;
+}
+
+.badge img {
+	height: 5rem;
 }
 
 @media (max-width: 768px) {
